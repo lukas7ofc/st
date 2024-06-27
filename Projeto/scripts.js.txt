@@ -1,0 +1,17 @@
+// scripts.js
+
+// Trocar as cores dos ícones ao clicar
+document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('nav ul li a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.forEach(link => link.style.color = '#fff'); // Reset all to white
+            link.style.color = getRandomColor();
+        });
+    });
+});
+
+function getRandomColor() {
+    const colors = ['#f00', '#0f0', '#ff0', '#f0f']; // Vermelho, Verde, Amarelo, Roxo
+    return colors[Math.floor(Math.random() * colors.length)];
+}
